@@ -38,6 +38,10 @@
 	`champions`
 
 	`items`
+
+	`summoner_spells`
+		(INT) id autoincrement, primary key
+		(VARCHAR) spell_name
 	
 	`tournaments`
 		(INT) id autoincrement, primary key
@@ -93,6 +97,16 @@
 		(INT) red_elders
 		(INT) red_heralds
 		(INT) red_barons
+		(INT) red_ban0
+		(INT) red_ban1
+		(INT) red_ban2
+		(INT) red_ban3
+		(INT) red_ban4
+		(INT) blue_ban0
+		(INT) blue_ban1
+		(INT) blue_ban2
+		(INT) blue_ban3
+		(INT) blue_ban4
 
 	--[[ todo: `matchdata_events`, eg player takes turret, player1 kills player2, etc
 
@@ -122,6 +136,16 @@
 		(ENUM [RED, BLUE, FALSE]) herald_map ; is the herald on the map, if so, which team
 		(ENUM [CLOUD,OCEAN,INFERNO, MOUNTAIN, FALSE]) next_drake    ; false = unknown
 		(ENUM [CLOUD,OCEAN,INFERNO, MOUNTAIN, FALSE]) active_drake  ; false = drake has not spawned or is dead
+		(INT) red_ban0
+		(INT) red_ban1
+		(INT) red_ban2
+		(INT) red_ban3
+		(INT) red_ban4
+		(INT) blue_ban0
+		(INT) blue_ban1
+		(INT) blue_ban2
+		(INT) blue_ban3
+		(INT) blue_ban4
 
 	`matchdata_team_live` --[[ maybe rename this
 		(INT) id autoincrement, primary key
@@ -159,6 +183,10 @@
 		(INT) item_slot4
 		(INT) item_slot5
 		(INT) trinket
+		(INT) summoner_spell0              ; id of summoner spell 0
+		(BOOLEAN) summoner_spell0_cd       ; if summoner spell 0 is on cd
+		(INT) summoner_spell1              ; id of summoner  spell 1
+		(BOOLEAN) summoner_spell1_cd       ; if summoner spell 0 is on cd
 		(INT) total_damage --[[ add more detailed stats such as damage to turrets, damage to champions, damage taken, etc
 	
 	`match_playerdata_live`
@@ -186,8 +214,13 @@
 		(BOOLEAN) item_slot3_cd
 		(BOOLEAN) item_slot4_cd
 		(BOOLEAN) item_slot5_cd
-		--[[ add when will item be off CD
 		(BOOLEAN) trinket
+		--[[ add when will item be off CD
+		(INT) summoner_spell0              ; id of summoner spell 0
+		(BOOLEAN) summoner_spell0_cd       ; if summoner spell 0 is on cd
+		(INT) summoner_spell1              ; id of summoner  spell 1
+		(BOOLEAN) summoner_spell1_cd       ; if summoner spell 0 is on cd
+		
 		(INT) damage --[[ add more detailed stats such as damage to turrets, damage to champions, damage taken, etc
 		
 

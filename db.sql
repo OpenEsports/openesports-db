@@ -36,20 +36,20 @@
 		(BOOLEAN) is_wildcard ; eg "1"    --[[ other option is BIT(1), probably better performance
 	
 	`tournaments`
-			(INT) id autoincrement, primary key
-			(INT) region_id
-			(VARCHAR) short_name  ; eg "NA LCS"
-			(VARCHAR) full_name   ; eg "League of Legends Championship Series"
-			(BOOLEAN) is_pro_regseason --[[ alternatively, have ENUM eg PRO_REGSEASON, PRO_PLAYOFFS, ACADEMY_REGSEASON, ACADEMY_PLAYOFFS
-			(BOOLEAN) is_pro_playoffs
-			(BOOLEAN) is_academy_regseason
-			(BOOLEAN) is_academy_playoffs
-			(INT) start_timestamp_expected --[[ Use expected and actual in case of delays rather than just one timestamp
-			(INT) start_timestamp_actual
-			(INT) end_timestamp_expected
-			(INT) end_timestamp_actual
-			(BOOLEAN) is_cancelled
-			(BOOLEAN) is_live
+		(INT) id autoincrement, primary key
+		(INT) region_id
+		(VARCHAR) short_name  ; eg "NA LCS"
+		(VARCHAR) full_name   ; eg "League of Legends Championship Series"
+		(BOOLEAN) is_pro_regseason --[[ alternatively, have ENUM eg PRO_REGSEASON, PRO_PLAYOFFS, ACADEMY_REGSEASON, ACADEMY_PLAYOFFS
+		(BOOLEAN) is_pro_playoffs
+		(BOOLEAN) is_academy_regseason
+		(BOOLEAN) is_academy_playoffs
+		(INT) start_timestamp_expected --[[ Use expected and actual in case of delays rather than just one timestamp
+		(INT) start_timestamp_actual
+		(INT) end_timestamp_expected
+		(INT) end_timestamp_actual
+		(BOOLEAN) is_cancelled
+		(BOOLEAN) is_live
 			
 		
 	`stream_platform`
